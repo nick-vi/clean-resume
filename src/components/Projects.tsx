@@ -6,6 +6,8 @@ import { ICON_SIZE } from '../app';
 export default function Projects() {
   const { projects } = resumeData;
 
+  if (projects.length === 0) return null;
+
   return (
     <Section title="Projects">
       <div className="flex gap-4">
