@@ -23,7 +23,7 @@ npm install
 
 Rename data.json.example to data.json file in the project root with your personal information, work experience, projects, etc.
 
-> Note: Only the first two projects will be displayed in the projects section, so adding more than two is unnecessary.
+> In the projects section, only the first two projects will be displayed, so adding more than two is unnecessary. If the source type is 'mono,' it will display as 'Source' without brackets. For other types, such as 'client' or 'backend,' the type will be included in brackets, like 'Source (client)' or 'Source (backend).
 
 ```json
 {
