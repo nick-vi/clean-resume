@@ -14,7 +14,7 @@ export default function ContactInfo(props: SectionProps) {
 
   return (
     <Section {...props}>
-      <div className="grid grid-cols-2 gap-4 text-xs">
+      <div className="grid grid-cols-2 gap-4">
         {phoneNumber && (
           <div className="flex gap-2 items-center">
             <Phone size={ICON_SIZE} weight="fill" />
