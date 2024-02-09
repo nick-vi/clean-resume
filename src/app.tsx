@@ -4,6 +4,7 @@ import Experience from './components/Experience';
 import Page from './components/Page';
 import Projects from './components/Projects';
 import Section from './components/Section';
+import Skills from './components/Skills';
 import resumeData from './data.json';
 
 export const ICON_SIZE = 24;
@@ -25,9 +26,7 @@ export function App() {
           <p>{aboutMe}</p>
         </Section>
         <Projects />
-        <Section title="Skills">
-          <p>{skills}</p>
-        </Section>
+        <Skills />
         <Experience />
         <Education />
         {languages && languages.length > 0 && (
