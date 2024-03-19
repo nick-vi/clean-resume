@@ -1,3 +1,4 @@
+import About from './components/About';
 import ContactInfo from './components/ContactInfo';
 import Education from './components/Education';
 import Experience from './components/Experience';
@@ -10,7 +11,7 @@ import resumeData from './data.json';
 export const ICON_SIZE = 24;
 
 export function App() {
-  const { fullName, title, aboutMe, skills, languages } = resumeData;
+  const { fullName, title, languages } = resumeData;
 
   return (
     <div className="bg-gray-200 text-gray-800">
@@ -22,9 +23,7 @@ export function App() {
           </h1>
         </Section>
         <ContactInfo />
-        <Section title="About me">
-          <p>{aboutMe}</p>
-        </Section>
+        <About />
         <Projects />
         <Skills />
         <Experience />
