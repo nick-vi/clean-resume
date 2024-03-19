@@ -1,12 +1,13 @@
 import Section from './Section';
-import resumeData from '../data.json';
 import { GithubLogo, Link } from '@phosphor-icons/react';
 import { ICON_SIZE } from '../app';
+import data from '../data';
+import ReactMarkdown from 'react-markdown';
 
 export default function Projects() {
-  const { projects } = resumeData;
+  const { projects } = data;
 
-  if (projects.length === 0) return null;
+  if (!projects || projects.length === 0) return null;
 
   return (
     <Section title="Projects">
@@ -28,7 +29,7 @@ export default function Projects() {
                 </a>
               )}
             </div>
-            <p>{project.description}</p>
+            <ReactMarkdown>{project.description}</ReactMarkdown>
             {project.source.length > 0 && (
               <div className="flex gap-2">
                 {project.source.map((source) => (

@@ -1,0 +1,72 @@
+import { type ResumeData } from './types';
+
+const data: ResumeData = {
+  fullName: 'John Doe',
+  title: 'Software Engineer',
+  phoneNumber: '123-456-7890',
+  email: 'john.doe@example.com',
+  linkedin: 'linkedin.com/in/johndoe',
+  github: 'github.com/johndoe',
+  website: 'https://johndoe.com',
+  aboutMe:
+    'I am a passionate software **engineer** with experience in web development.',
+  skills: [
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'Node.js',
+    { name: 'Frontend', items: ['HTML', 'CSS', 'SASS'] },
+    { name: 'Backend', items: ['Express', 'MongoDB'] },
+  ],
+  languages: [
+    { language: 'English', proficiency: 'Fluent' },
+    { language: 'Spanish', proficiency: 'Intermediate' },
+  ],
+  projects: [
+    {
+      name: 'E-commerce Website',
+      description:
+        'Built a responsive e-commerce website using React and Node.js.',
+      live: 'example.com',
+      techStack: ['React', 'Node.js', 'MongoDB'],
+      source: [{ type: 'client', url: 'github.com/johndoe/e-commerce' }],
+    },
+    {
+      name: 'Weather App',
+      description:
+        'Developed a weather application using React and an external API.',
+      techStack: ['React', 'API'],
+      source: [
+        { type: 'backend', url: 'github.com/johndoe/weather-app' },
+        { type: 'client', url: 'github.com/johndoe/weather-app-client' },
+      ],
+    },
+  ],
+  experience: [
+    {
+      company: 'ABC Company',
+      position: 'Software Engineer',
+      startDate: 'January 2018',
+      endDate: 'Present',
+      description:
+        'Developed and maintained web applications using React and Node.js.',
+    },
+    {
+      company: 'XYZ Inc.',
+      position: 'Intern',
+      startDate: 'May 2017',
+      endDate: 'August 2017',
+      description: 'Assisted in testing and debugging software applications.',
+    },
+  ],
+  education: [
+    {
+      institution: 'University of ABC',
+      degree: 'Bachelor of Science in Computer Science',
+      startDate: 'August 2014',
+      endDate: 'May 2018',
+    },
+  ],
+};
+
+export default data;

@@ -1,10 +1,12 @@
+import data from '../data';
 import Section from './Section';
-import resumeData from '../data.json';
+import { formatDates } from '../utils';
+import ReactMarkdown from 'react-markdown';
 
 export default function Experience() {
-  const { experience } = resumeData;
+  const { experience } = data;
 
-  if (experience.length === 0) return null;
+  if (!experience || experience.length === 0) return null;
 
   return (
     <Section title="Experience">
@@ -13,13 +15,16 @@ export default function Experience() {
           <div key={job.company} className="space-y-1">
             <div className="">
               <div>
-                <p className="text-xs">{job.dates}</p>
+                <p className="text-xs">
+                  {formatDates(job.startDate, job.endDate)}
+                </p>
               </div>
               <h3 className="font-bold">
-                {job.company} - <span className="font-medium">{job.title}</span>
+                {job.company} -{' '}
+                <span className="font-medium">{job.position}</span>
               </h3>
             </div>
-            <p>{job.description}</p>
+            <ReactMarkdown>{job.description}</ReactMarkdown>
           </div>
         ))}
       </div>

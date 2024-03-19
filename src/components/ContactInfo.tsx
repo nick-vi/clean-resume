@@ -1,5 +1,4 @@
 import { ICON_SIZE } from '../app';
-import resumeData from '../data.json';
 import {
   GithubLogo,
   Globe,
@@ -8,45 +7,45 @@ import {
   Phone,
 } from '@phosphor-icons/react';
 import Section, { type SectionProps } from './Section';
+import data from '../data';
+import { cleanUrl, ensureAbsoluteUrl, extractGithubUsername } from '../utils';
 
 export default function ContactInfo(props: SectionProps) {
-  const { phoneNumber, email, linkedin, github, website } = resumeData;
+  const { phoneNumber, email, linkedin, github, website } = data;
 
   return (
     <Section {...props}>
       <div className="grid grid-cols-2 gap-4">
-        {phoneNumber && (
+        {!!phoneNumber && (
           <div className="flex gap-2 items-center">
             <Phone size={ICON_SIZE} weight="fill" />
-            <a href={`tel:${resumeData.phoneNumber}`}>
-              {resumeData.phoneNumber}
-            </a>
+            <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
           </div>
         )}
-        {email && (
+        {!!email && (
           <div className="flex gap-2 items-center">
             <PaperPlaneTilt size={ICON_SIZE} weight="fill" />
-            <a href={`mailto:${resumeData.email}`}>{resumeData.email}</a>
+            <a href={`mailto:${email}`}>{email}</a>
           </div>
         )}
-        {linkedin && (
+        {!!linkedin && (
           <div className="flex gap-2 items-center">
             <LinkedinLogo size={ICON_SIZE} weight="fill" />
-            <a href={resumeData.linkedin}>
-              {resumeData.linkedin.split('www.')[1]}
+            <a href={ensureAbsoluteUrl(linkedin)}>{cleanUrl(linkedin)}</a>
+          </div>
+        )}
+        {!!github && (
+          <div className="flex gap-2 items-center">
+            <GithubLogo size={ICON_SIZE} weight="fill" />
+            <a href={ensureAbsoluteUrl(github)}>
+              {extractGithubUsername(github)}
             </a>
           </div>
         )}
-        {github && (
-          <div className="flex gap-2 items-center">
-            <GithubLogo size={ICON_SIZE} weight="fill" />
-            <a href={resumeData.github}>{resumeData.github.split('//')[1]}</a>
-          </div>
-        )}
-        {website && (
+        {!!website && (
           <div className="flex gap-2 items-center">
             <Globe size={ICON_SIZE} />
-            <a href={resumeData.website}>{resumeData.website.split('//')[1]}</a>
+            <a href={ensureAbsoluteUrl(website)}>{website.split('//')[1]}</a>
           </div>
         )}
       </div>

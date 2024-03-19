@@ -1,19 +1,16 @@
+import ReactMarkdown from 'react-markdown';
+import data from '../data';
 import Section from './Section';
-import resumeData from '../data.json';
 
 export default function About() {
-  const { aboutMe } = resumeData;
+  const { aboutMe } = data;
 
   if (!aboutMe) return null;
 
-  const paragraphs = aboutMe.split('\n');
-
   return (
     <Section title="About me">
-      <div className="space-y-4">
-        {paragraphs.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
+      <div className="prose space-y-4">
+        <ReactMarkdown>{aboutMe}</ReactMarkdown>
       </div>
     </Section>
   );
