@@ -1,6 +1,6 @@
-import data from '../data';
-import { type CategorizedSkills } from '../types';
-import Section from './Section';
+import data from '../../data';
+import { type CategorizedSkills } from '../../types';
+import Section from '../Section';
 
 function isCategorizedSkills(item: any): item is CategorizedSkills {
   return (

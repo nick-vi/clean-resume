@@ -1,6 +1,6 @@
 import ReactMarkdown from 'react-markdown';
-import data from '../data';
-import Section from './Section';
+import data from '../../data';
+import Section from '../Section';
 
 export default function About() {
   const { aboutMe } = data;

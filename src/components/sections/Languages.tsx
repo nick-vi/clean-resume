@@ -1,5 +1,5 @@
-import data from '../data';
-import Section from './Section';
+import data from '../../data';
+import Section from '../Section';
 
 export default function Languages() {
   const { languages } = data;

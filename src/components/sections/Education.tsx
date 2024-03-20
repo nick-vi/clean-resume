@@ -1,6 +1,6 @@
-import data from '../data';
-import { formatDates } from '../utils';
-import Section from './Section';
+import data from '../../data';
+import { formatDates } from '../../utils';
+import Section from '../Section';
 
 export default function Education() {
   const { education } = data;

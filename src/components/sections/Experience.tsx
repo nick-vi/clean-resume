@@ -1,6 +1,6 @@
-import data from '../data';
-import Section from './Section';
-import { formatDates } from '../utils';
+import data from '../../data';
+import Section from '../Section';
+import { formatDates } from '../../utils';
 import ReactMarkdown from 'react-markdown';
 
 export default function Experience() {
