@@ -16,7 +16,7 @@ npm install
 
 ### How to Fill the ResumeData Object
 
-To create your resume, you will need to fill in the data.ts file with your personal information. Below is a guide on what each property in the ResumeData type represents and how you should fill them:
+To create your resume, you will need to fill in the `data.ts` file with your personal information. Below is a guide on what each property in the ResumeData type represents and how you should fill them:
 
 > Dates Handling: Dates are parsed using language processing (NLP), so you can enter them in any format you prefer, such as 'May 2020', 'last year', or 'Spring 2014', and they don't need to be consistent.
 
