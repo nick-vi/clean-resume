@@ -3,11 +3,10 @@ import ContactInfo from './components/ContactInfo';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Heading from './components/Heading';
+import Languages from './components/Languages';
 import Page from './components/Page';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-
-export const ICON_SIZE = 24;
 
 export function App() {
   return (
@@ -20,6 +19,7 @@ export function App() {
         <Skills />
         <Experience />
         <Education />
+        <Languages />
       </Page>
     </div>
   );

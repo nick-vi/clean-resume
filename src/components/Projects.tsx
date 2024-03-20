@@ -1,8 +1,8 @@
 import Section from './Section';
 import { GithubLogo, Link } from '@phosphor-icons/react';
-import { ICON_SIZE } from '../app';
 import data from '../data';
 import ReactMarkdown from 'react-markdown';
+import { ICON_SIZE } from '../constants';
 
 export default function Projects() {
   const { projects } = data;

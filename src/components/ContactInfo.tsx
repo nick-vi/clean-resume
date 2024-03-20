@@ -1,4 +1,3 @@
-import { ICON_SIZE } from '../app';
 import {
   GithubLogo,
   Globe,
@@ -9,6 +8,7 @@ import {
 import Section, { type SectionProps } from './Section';
 import data from '../data';
 import { cleanUrl, ensureAbsoluteUrl, extractGithubUsername } from '../utils';
+import { ICON_SIZE } from '../constants';
 
 export default function ContactInfo(props: SectionProps) {
   const { phoneNumber, email, linkedin, github, website } = data;
