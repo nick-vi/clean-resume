@@ -6,9 +6,11 @@ export default function Heading() {
 
   return (
     <Section divider>
-      <h1 className="space-x-2">
-        <span className="text-2xl font-bold">{fullName}</span>
-        {title && <span className="text-2xl font-light">{title}</span>}
+      <h1 className="sm:space-x-2 flex flex-col sm:block">
+        <span className="text-xl a4:text-2xl font-bold">{fullName}</span>
+        {title && (
+          <span className="text-xl a4:text-2xl font-light">{title}</span>
+        )}
       </h1>
     </Section>
   );

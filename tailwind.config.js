@@ -3,7 +3,10 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      width: {
+      screens: {
+        a4: '210mm',
+      },
+      maxWidth: {
         a4: '210mm',
       },
       minHeight: {

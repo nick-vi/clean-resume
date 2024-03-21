@@ -19,27 +19,27 @@ export default function ContactInfo(props: SectionProps) {
 
   return (
     <Section {...props}>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid sm:grid-cols-2 gap-4 grid-cols-1">
         {!!phoneNumber && (
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2">
             <Phone size={ICON_SIZE} weight="fill" />
             <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
           </div>
         )}
         {!!email && (
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2">
             <PaperPlaneTilt size={ICON_SIZE} weight="fill" />
             <a href={`mailto:${email}`}>{email}</a>
           </div>
         )}
         {!!linkedin && (
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2">
             <LinkedinLogo size={ICON_SIZE} weight="fill" />
             <a href={ensureAbsoluteUrl(linkedin)}>{cleanUrl(linkedin)}</a>
           </div>
         )}
         {!!github && (
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2">
             <GithubLogo size={ICON_SIZE} weight="fill" />
             <a href={ensureAbsoluteUrl(github)}>
               {extractGithubUsername(github)}
@@ -47,7 +47,7 @@ export default function ContactInfo(props: SectionProps) {
           </div>
         )}
         {!!website && (
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2">
             <Globe size={ICON_SIZE} />
             <a href={ensureAbsoluteUrl(website)}>{website.split('//')[1]}</a>
           </div>

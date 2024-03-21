@@ -11,11 +11,11 @@ export default function Projects() {
 
   return (
     <Section title="Projects">
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-4">
         {projects.slice(0, 2).map((project) => (
           <div
             key={project.name}
-            className="space-y-2 border-r border-gray-300 last:border-0 pr-4 last:pr-0 w-1/2"
+            className="space-y-2 sm:border-r border-gray-300 last:border-0 pr-4 last:pr-0 sm:w-1/2"
           >
             <div className="flex justify-between items-center">
               <h3 className="font-bold">{project.name}</h3>
