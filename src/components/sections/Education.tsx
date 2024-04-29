@@ -15,7 +15,7 @@ export default function Education() {
             <div className="">
               <div>
                 <p className="text-xs">
-                  {formatDates(record.startDate, record.endDate)}
+                  {formatDates(record.startDate, record.endDate, 'Ongoing')}
                 </p>
               </div>
               <h3 className="font-bold">

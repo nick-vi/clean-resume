@@ -14,14 +14,14 @@ type Experience = {
   company: string;
   position: string;
   startDate: string | Date;
-  endDate: string | Date | undefined;
+  endDate?: string | Date;
   description: string;
 };
 type Education = {
   institution: string;
   degree: string;
   startDate: string | Date;
-  endDate: string | Date | undefined;
+  endDate?: string | Date;
 };
 export interface ResumeData {
   fullName: string;

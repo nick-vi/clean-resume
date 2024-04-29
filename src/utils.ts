@@ -35,7 +35,7 @@ export const cx = (...classes: (string | { [key: string]: boolean })[]) => {
 };
 
 /**
- * Parses a date string into a Date object. Handles special case where 'present' is treated as the current date.
+ * Parses a date string into a Date object. Handles special case where 'present' and 'ongoing' are treated as the current date.
  *
  * @param {string} dateString - The date string to parse.
  * @returns {Date} The parsed Date object.
@@ -45,15 +45,19 @@ export const cx = (...classes: (string | { [key: string]: boolean })[]) => {
  * parseDate('January 2018');
  */
 export function parseDate(dateString: string): Date {
-  if (dateString.toLowerCase() === 'present') {
+  if (
+    dateString.toLowerCase() === 'present' ||
+    dateString.toLowerCase() === 'ongoing'
+  ) {
     return new Date();
+  }
+
+  console.log(dateString);
+  const parsedDate = chronoParseDate(dateString);
+  if (parsedDate) {
+    return parsedDate;
   } else {
-    const parsedDate = chronoParseDate(dateString);
-    if (parsedDate) {
-      return parsedDate;
-    } else {
-      throw new Error('Invalid date format or unparseable date string');
-    }
+    throw new Error('Invalid date format or unparseable date string');
   }
 }
 
@@ -61,15 +65,19 @@ export function parseDate(dateString: string): Date {
  * Formats a Date or date string into a readable string format. If the date is in the same month as the current date, returns 'Present'.
  *
  * @param {Date|string} date - The Date instance or date string to format.
+ * @param {string} label - The label to return if the date is in the current month, defaults to 'Present'
  * @returns {string} The formatted date string.
  * @example
  * // Returns 'January 2018' or 'Present' if the date is in the current month
  * formatDate(new Date('2018-01-01'));
  */
-export function formatDate(date: Date | string): string {
+export function formatDate(
+  date: Date | string,
+  label: string = 'Present'
+): string {
   const parsedDate = typeof date === 'string' ? parseDate(date) : date;
   return isSameMonth(new Date(), parsedDate)
-    ? 'Present'
+    ? label
     : format(parsedDate, DATE_FORMAT);
 }
 
@@ -78,18 +86,25 @@ export function formatDate(date: Date | string): string {
  *
  * @param {string|Date} start - The start date of the range.
  * @param {string|Date} [end] - The end date of the range, optional.
+ * @param {string} label - The label to return if the date is in the current month.
  * @returns {string} The formatted date range.
  * @example
  * // Returns 'January 2018 - March 2018' or just 'January 2018' if start and end are the same
  * formatDates('2018-01-01', '2018-03-01');
  */
-export function formatDates(start: string | Date, end?: string | Date): string {
-  const formattedStart = formatDate(start);
+export function formatDates(
+  start: string | Date,
+  end?: string | Date,
+  label?: string
+): string {
+  const formattedStart =
+    typeof start === 'string' && +start ? start : formatDate(start, label);
   if (!end || start === end) {
     return formattedStart;
   }
 
-  const formattedEnd = formatDate(end);
+  const formattedEnd =
+    typeof end === 'string' && +end ? end : formatDate(end, label);
   return `${formattedStart} - ${formattedEnd}`;
 }
 
