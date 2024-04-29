@@ -12,18 +12,16 @@ export default function Experience() {
     <Section title="Experience">
       <div className="space-y-2">
         {experience.map((job) => (
-          <div key={job.company} className="space-y-1">
-            <div className="">
-              <div>
-                <p className="text-xs">
-                  {formatDates(job.startDate, job.endDate)}
-                </p>
-              </div>
-              <h3 className="font-bold">
-                {job.company} -{' '}
-                <span className="font-medium">{job.position}</span>
-              </h3>
+          <div key={job.company} className="space-y-0.5">
+            <div>
+              <p className="text-xs">
+                {formatDates(job.startDate, job.endDate)}
+              </p>
             </div>
+            <h3 className="font-bold">
+              {job.company} -{' '}
+              <span className="font-medium">{job.position}</span>
+            </h3>
             <ReactMarkdown>{job.description}</ReactMarkdown>
           </div>
         ))}
