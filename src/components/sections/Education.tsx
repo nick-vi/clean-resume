@@ -11,9 +11,9 @@ export default function Education() {
     <Section title="Education">
       <div className="space-y-2">
         {education.map((record) => (
-          <div key={record.degree} className="space-y-0.5">
+          <div key={record.degree} className="space-y-1">
             <div>
-              <p className="text-xs">
+              <p className="text-xs border px-2 py-0.5 rounded-md inline font-medium">
                 {formatDates(record.startDate, record.endDate, 'Ongoing')}
               </p>
             </div>

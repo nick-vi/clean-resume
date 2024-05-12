@@ -12,9 +12,9 @@ export default function Experience() {
     <Section title="Experience">
       <div className="space-y-2">
         {experience.map((job) => (
-          <div key={job.company} className="space-y-0.5">
+          <div key={job.company} className="space-y-1">
             <div>
-              <p className="text-xs">
+              <p className="text-xs border px-2 py-0.5 rounded-md inline font-medium">
                 {formatDates(job.startDate, job.endDate)}
               </p>
             </div>
