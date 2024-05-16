@@ -16,9 +16,9 @@ export function App() {
       <Heading />
       <ContactInfo />
       <About />
-      <Projects />
-      <Skills />
       <Experience />
+      <Skills />
+      <Projects />
       <Education />
       <Languages />
     </Page>
